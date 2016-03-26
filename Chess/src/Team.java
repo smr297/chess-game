@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Team {
 	
 	private Color c;
-	private ArrayList<Piece> pieces = new ArrayList<Piece>();
+	private Piece pieces[] = new Piece[16];
 
 	public Team(Color c1) {
 		int temp = 8;
@@ -12,21 +12,21 @@ public class Team {
 		if(c.equals(Color.WHITE)){
 			temp = 1;
 		}
-		pieces.add(new Rook(c, temp, 0));
-		pieces.add(new Rook(c, temp, 7));
-		pieces.add(new Knight(c, temp, 1));
-		pieces.add(new Knight(c, temp, 6));
-		pieces.add(new Bishop(c, temp, 2));
-		pieces.add(new Bishop(c, temp, 5));
-		pieces.add(new King(c, temp, 3));
-		pieces.add(new Queen(c, temp, 4));
+		pieces[0] = (new Rook(c, temp, 0));
+		pieces[7] = (new Rook(c, temp, 7));
+		pieces[1] = (new Knight(c, temp, 1));
+		pieces[6] = (new Knight(c, temp, 6));
+		pieces[2] = (new Bishop(c, temp, 2));
+		pieces[5] = (new Bishop(c, temp, 5));
+		pieces[3] = (new King(c, temp, 3));
+		pieces[4] = (new Queen(c, temp, 4));
 		
 		if (temp == 1)
 			temp++;
 		else
 			temp--;
 		for(int i = 0; i < 8; i++){
-			pieces.add(new Pawn(c, temp, i));
+			pieces[i+8] = (new Pawn(c, temp, i));
 		}
 	}
 		
