@@ -47,10 +47,10 @@ public abstract class Piece {
 		return !sameTeam(p);
 	}
 	
-	public abstract HashSet<Loc> getValidMoves(Board b);
+	public abstract HashSet<Loc> getValidMoves(Board b, Team t);
 	
-	public boolean canMoveTo(Board b, int x, int y){
-		return getValidMoves(b).contains(new Loc(x, y));
+	public boolean canMoveTo(Board b, Team t, int x, int y){
+		return getValidMoves(b, t).contains(new Loc(x, y));
 	}
 
 }

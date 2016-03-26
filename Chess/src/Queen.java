@@ -8,7 +8,7 @@ public class Queen extends Piece {
 	}
 	
 	@Override
-	public HashSet<Loc> getValidMoves(Board b) {
+	public HashSet<Loc> getValidMoves(Board b, Team t) {
 		HashSet<Loc> moves = new HashSet<Loc>();
 		moves.addAll(horizontalCheck(b,1));
 		moves.addAll(horizontalCheck(b, -1));

@@ -29,6 +29,19 @@ public class Team {
 			pieces[i+8] = (new Pawn(c, temp, i));
 		}
 	}
+	
+	public void setPieceNull(Piece p){
+		for(int i = 0; i < pieces.length; i++){
+			if (pieces[i] == p)
+				pieces[i] = null;
+				
+		}
+		
+	}
+	
+	public Piece[] getTeam(){
+		return pieces;
+	}
 		
 }
 

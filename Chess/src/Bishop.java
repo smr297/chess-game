@@ -9,7 +9,7 @@ public class Bishop extends Piece {
 	}
 
 	@Override
-	public HashSet<Loc> getValidMoves(Board b) {
+	public HashSet<Loc> getValidMoves(Board b, Team t) {
 		HashSet<Loc> moves = new HashSet<Loc>();
 		moves.addAll(diagonalCheck(b,1,1));
 		moves.addAll(diagonalCheck(b,1,-1));

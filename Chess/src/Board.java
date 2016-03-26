@@ -30,6 +30,15 @@ public class Board {
 		return !(x < 0 || x > 7 || y < 0 || y > 7);
 	}
 	
+	public boolean isAttackedBy(int x, int y, Team t){
+		for (int i = 0; i < t.getTeam().length; i++){
+			if (t.getTeam()[i].canMoveTo(this, t, x, y))
+				return true;
+		}
+		return false;
+	}
+	
+	
 	public String toString(){
 		String str = "";
 	    for(int i = 0; i < 8; i++){
@@ -47,6 +56,8 @@ public class Board {
 	private Piece getPieceOnTile(Tile t){
 		return t.getPiece();
 	}
+	
+
 
 	
 	public class Tile {

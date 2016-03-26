@@ -10,7 +10,7 @@ public class Knight extends Piece {
 	}
 
 	@Override
-	public HashSet<Loc> getValidMoves(Board b) {
+	public HashSet<Loc> getValidMoves(Board b, Team t) {
 		HashSet<Loc> moves = new HashSet<Loc>();
 		for(Loc factor: positions){
 			int newX = x+factor.getX();

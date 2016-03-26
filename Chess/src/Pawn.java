@@ -8,7 +8,7 @@ public class Pawn extends Piece {
 	}
 
 	@Override
-	public HashSet<Loc> getValidMoves(Board b) {
+	public HashSet<Loc> getValidMoves(Board b, Team t) {
 		if (this.getColor().equals(Color.BLACK))
 			return getBlackPossibleMoves(b);
 		else
