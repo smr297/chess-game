@@ -13,14 +13,24 @@ public abstract class Piece {
 		this.y = y;
 	}
 	
-	public void setLocation(int x, int y){
-		this.x = x;
-		this.y = y;
+	public void setLocation(Board b, int xLoc, int yLoc){
+		x = xLoc;
+		y = yLoc;
+		
+		b.setPieceAt(this, xLoc, yLoc);
 		
 	}
 	
 	public Loc getLocation(){
 		return new Loc(x, y);
+	}
+	
+	public int getX(){
+		return x;
+	}
+	
+	public int getY(){
+		return y;
 	}
 	
 	public Color getColor(){
@@ -51,6 +61,11 @@ public abstract class Piece {
 	
 	public boolean canMoveTo(Board b, Team t, int x, int y){
 		return getValidMoves(b, t).contains(new Loc(x, y));
+	}
+	
+	public String toString(){
+		return "NULL ";
+	
 	}
 
 }

@@ -32,5 +32,9 @@ public class King extends Piece {
 	public boolean isChecked(Board b, Team t){
 	  return b.isAttackedBy(this.x, this.x, t);
 	}
+	
+	public String toString(){
+		return "KING ";
+	}
 
 }

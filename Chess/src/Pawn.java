@@ -39,5 +39,9 @@ public class Pawn extends Piece {
 		
 		return moves;
 	}
+	
+	public String toString(){
+		return "PAWN ";
+	}
 
 }

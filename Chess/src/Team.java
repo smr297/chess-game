@@ -7,21 +7,23 @@ public class Team {
 	private Piece pieces[] = new Piece[16];
 
 	public Team(Color c1) {
-		int temp = 8;
+		int temp = 7;
 		c = c1;
 		if(c.equals(Color.WHITE)){
-			temp = 1;
+			temp = 0;
 		}
 		pieces[0] = (new Rook(c, temp, 0));
-		pieces[7] = (new Rook(c, temp, 7));
 		pieces[1] = (new Knight(c, temp, 1));
-		pieces[6] = (new Knight(c, temp, 6));
 		pieces[2] = (new Bishop(c, temp, 2));
-		pieces[5] = (new Bishop(c, temp, 5));
 		pieces[3] = (new King(c, temp, 3));
 		pieces[4] = (new Queen(c, temp, 4));
+		pieces[5] = (new Bishop(c, temp, 5));
+		pieces[6] = (new Knight(c, temp, 6));
+		pieces[7] = (new Rook(c, temp, 7));
+
+
 		
-		if (temp == 1)
+		if (temp == 0)
 			temp++;
 		else
 			temp--;

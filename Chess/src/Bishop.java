@@ -42,5 +42,9 @@ public class Bishop extends Piece {
 		}
 		return moves;
 	}
+	
+	public String toString(){
+		return "BISHOP ";
+	}
 
 }

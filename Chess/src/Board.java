@@ -39,11 +39,22 @@ public class Board {
 	}
 	
 	
-	public String toString(){
+	/*public String toString(){
 		String str = "";
 	    for(int i = 0; i < 8; i++){
 			for(int j = 0; j < 8; j++){
 				str += gameBoard[i][j] + " ";
+			}
+			str += "\n";
+	    }
+	    return str;
+	}*/
+	
+	public String toString(){
+		String str = "";
+	    for(int i = 0; i < 8; i++){
+			for(int j = 0; j < 8; j++){
+				str += getPieceAt(i, j);
 			}
 			str += "\n";
 	    }

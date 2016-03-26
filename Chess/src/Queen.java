@@ -88,6 +88,10 @@ public class Queen extends Piece {
 		}
 		return moves;
 	}
+	
+	public String toString(){
+		return "QUEEN ";
+	}
 
 	
 

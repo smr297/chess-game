@@ -25,4 +25,8 @@ public class Knight extends Piece {
 		return moves;
 		
 	}
+	
+	public String toString(){
+		return "KNIGHT ";
+	}
 }

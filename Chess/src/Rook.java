@@ -60,4 +60,8 @@ public class Rook extends Piece {
 		return moves;
 	}
 	
+	public String toString(){
+		return "ROOK ";
+	}
+	
 }
