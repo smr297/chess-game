@@ -63,9 +63,8 @@ public abstract class Piece {
 		return getValidMoves(b, t).contains(new Loc(x, y));
 	}
 	
-	public String toString(){
-		return "NULL ";
+	public abstract String toString();
 	
-	}
+	
 
 }

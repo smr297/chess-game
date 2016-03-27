@@ -12,14 +12,14 @@ public class King extends Piece {
 
 
 	@Override
-	public HashSet<Loc> getValidMoves(Board b, Team t) {
+	public HashSet<Loc> getValidMoves(Board b, Team otherTeam) {
 	  HashSet<Loc> moves = new HashSet<Loc>();
 		for(Loc factor: positions){
 			int newX = x+factor.getX();
 			int newY = y+factor.getY();
 			Piece p = b.getPieceAt(newX, newY);
 			
-			if(Board.onBoard(newX, newY) && !sameTeam(p) && !b.isAttackedBy(this.x, this.x, t)){
+			if(Board.onBoard(newX, newY) && !sameTeam(p) && !b.isAttackedBy(newX, newY, otherTeam)){
 				moves.add(new Loc(newX, newY));
 			}
 		
@@ -29,8 +29,8 @@ public class King extends Piece {
 	
 	}
 	
-	public boolean isChecked(Board b, Team t){
-	  return b.isAttackedBy(this.x, this.x, t);
+	public boolean isCheckedBy(Board b, Team otherTeam){
+	  return b.isAttackedBy(this.x, this.y, otherTeam);
 	}
 	
 	public String toString(){

@@ -26,6 +26,7 @@ public class Board {
 			
 	}
 	
+	
 	public static boolean onBoard(int x, int y){
 		return !(x < 0 || x > 7 || y < 0 || y > 7);
 	}
@@ -54,7 +55,12 @@ public class Board {
 		String str = "";
 	    for(int i = 0; i < 8; i++){
 			for(int j = 0; j < 8; j++){
-				str += getPieceAt(i, j);
+				if(!isEmpty(i, j)){
+				  str += getPieceAt(i, j);
+				}
+				else {
+				  str += gameBoard[i][j] + " ";
+				}
 			}
 			str += "\n";
 	    }
