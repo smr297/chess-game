@@ -28,9 +28,9 @@ public class Rook extends Piece {
 		if(p == null){
 			moves.add(new Loc(newX, y));
 			if (i > 0)
-				moves.addAll(horizontalCheck(b, i+1));
+				horizontalCheck(b, i+1);
 			else
-				moves.addAll(horizontalCheck(b, i-1));
+				horizontalCheck(b, i-1);
 				
 		} else if (diffTeam(p)){
 			moves.add(new Loc(newX, y));
@@ -49,9 +49,9 @@ public class Rook extends Piece {
 		if(p == null){
 			moves.add(new Loc(x, newY));
 			if (i > 0)
-				moves.addAll(verticalCheck(b, i+1));
+				verticalCheck(b, i+1);
 			else
-				moves.addAll(verticalCheck(b, i-1));
+				verticalCheck(b, i-1);
 				
 		} else if (diffTeam(p)){
 			moves.add(new Loc(x, newY));

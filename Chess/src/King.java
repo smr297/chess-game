@@ -13,12 +13,15 @@ public class King extends Piece {
 
 	@Override
 	public HashSet<Loc> getValidMoves(Board b, Team otherTeam) {
+	  Piece p = null;
 	  HashSet<Loc> moves = new HashSet<Loc>();
 		for(Loc factor: positions){
 			int newX = x+factor.getX();
 			int newY = y+factor.getY();
-			Piece p = b.getPieceAt(newX, newY);
 			
+			if(Board.onBoard(newX, newY)){
+			  p = b.getPieceAt(newX, newY);
+			}
 			if(Board.onBoard(newX, newY) && !sameTeam(p) && !b.isAttackedBy(newX, newY, otherTeam)){
 				moves.add(new Loc(newX, newY));
 			}

@@ -22,6 +22,15 @@ public class GamePlay {
 		} 
 	}
 	
+	public void moveTest(String s){
+		
+		movePiece(b.getPieceAt(Character.getNumericValue(s.charAt(0)), 
+				(Character.getNumericValue(s.charAt(1)))), (Character.getNumericValue(s.charAt(2))),
+				(Character.getNumericValue(s.charAt(3))));
+		
+	}
+	
+	
 	public void movePiece(Piece p, int x, int y){
 		if ((p.getColor() == Color.white) && whiteTurn){
 			if(p.canMoveTo(b, whiteTeam, x, y)){
