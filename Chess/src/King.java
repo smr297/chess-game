@@ -32,12 +32,28 @@ public class King extends Piece {
 	
 	}
 	
+	public HashSet<Loc> getPossibleMoves(Board b) {
+		
+			  HashSet<Loc> moves = new HashSet<Loc>();
+				for(Loc factor: positions){
+					int newX = x+factor.getX();
+					int newY = y+factor.getY();
+					
+					if(Board.onBoard(newX, newY)){
+					  moves.add(new Loc (newX, newY));
+					}
+				}
+				return moves;
+	}
+	
+	
+	
 	public boolean isCheckedBy(Board b, Team otherTeam){
 	  return b.isAttackedBy(this.x, this.y, otherTeam);
 	}
 	
 	public String toString(){
-		return "KING ";
+		return "KING   ";
 	}
 
 }

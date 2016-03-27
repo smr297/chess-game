@@ -32,22 +32,31 @@ public class GamePlay {
 	
 	
 	public void movePiece(Piece p, int x, int y){
-		if ((p.getColor() == Color.white) && whiteTurn){
-			if(p.canMoveTo(b, whiteTeam, x, y)){
+		if (p == null){
+			System.out.println("Select valid piece");
+			
+		}
+		else if ((p.getColor() == Color.white) && whiteTurn){
+
+			if(p.canMoveTo(b, blackTeam, x, y)){
 				deletePiece(x,y);
+				b.setPieceAt(null, p.getX(), p.getY());
 				p.setLocation(b, x, y);
 				turnComp = true;
+				System.out.println("Reached 1");
 			} else {
-				System.out.println("Not a valid move");
+				System.out.println("Not a valid move 1");
 			}
 			
 		} else if ((p.getColor() == Color.black) && blackTurn) {
-			if(p.canMoveTo(b, blackTeam, x, y)){
+			if(p.canMoveTo(b, whiteTeam, x, y)){
 				deletePiece(x,y);
+				b.setPieceAt(null, p.getX(), p.getY());
 				p.setLocation(b, x, y);
 				turnComp = true;
+				System.out.println("Reached 2");
 			} else {
-				System.out.println("Not a valid move");
+				System.out.println("Not a valid move 2");
 			}
 			
 		} else if ((p.getColor() == Color.white) && blackTurn){

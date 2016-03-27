@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public abstract class Piece {
 	
@@ -60,7 +61,14 @@ public abstract class Piece {
 	public abstract HashSet<Loc> getValidMoves(Board b, Team t);
 	
 	public boolean canMoveTo(Board b, Team t, int x, int y){
-		return getValidMoves(b, t).contains(new Loc(x, y));
+		Iterator iterator = getValidMoves(b, t).iterator(); 
+		while(iterator.hasNext()){
+			Loc item = (Loc) iterator.next();
+			if (item.getX() == x && item.getY() == y)
+				return true;
+		}
+		
+		return false;
 	}
 	
 	public abstract String toString();

@@ -32,8 +32,12 @@ public class Board {
 	}
 	
 	public boolean isAttackedBy(int x, int y, Team t){
-		for (int i = 0; i < t.getTeam().length; i++){
-			if (t.getTeam()[i].canMoveTo(this, t, x, y))
+		if (((King) t.getTeam()[3]).getPossibleMoves(this).contains(new Loc(x,y))){
+			return true;
+			
+		}
+		for (int i = 0; i < t.getTeam().length && i != 3; i++){
+			if (t.getTeam()[i]!= null && t.getTeam()[i].canMoveTo(this, t, x, y))
 				return true;
 		}
 		return false;
@@ -109,9 +113,9 @@ public class Board {
 		
 		public String toString(){
 			if (c.equals(Color.WHITE))
-				return "WHITE";
+				return "WHITE ";
 			else
-				return "BLACK";
+				return "BLACK ";
 		}
 	}
 }
