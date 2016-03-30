@@ -61,7 +61,7 @@ public abstract class Piece {
 	public abstract HashSet<Loc> getValidMoves(Board b, Team t);
 	
 	public boolean canMoveTo(Board b, Team t, int x, int y){
-		Iterator iterator = getValidMoves(b, t).iterator(); 
+		Iterator<Loc> iterator = getValidMoves(b, t).iterator(); 
 		while(iterator.hasNext()){
 			Loc item = (Loc) iterator.next();
 			if (item.getX() == x && item.getY() == y)

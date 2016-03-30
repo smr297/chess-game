@@ -22,7 +22,7 @@ public class Main {
 
 			}
 			
-			
+		 vReader.close();
 		}
 			
 	}

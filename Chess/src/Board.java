@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.Iterator;
 
 public class Board {
 	Tile[][] gameBoard = new Tile[8][8];
@@ -32,10 +33,15 @@ public class Board {
 	}
 	
 	public boolean isAttackedBy(int x, int y, Team t){
-		if (((King) t.getTeam()[3]).getPossibleMoves(this).contains(new Loc(x,y))){
-			return true;
+		
+		Iterator<Loc> iterator = ((King) t.getTeam()[3]).getPossibleMoves(this).iterator(); 
+			while(iterator.hasNext()){
+				Loc item = (Loc) iterator.next();
+				if (item.getX() == x && item.getY() == y)
+					return true;
+			}
+		
 			
-		}
 		for (int i = 0; i < t.getTeam().length && i != 3; i++){
 			if (t.getTeam()[i]!= null && t.getTeam()[i].canMoveTo(this, t, x, y))
 				return true;
@@ -63,7 +69,7 @@ public class Board {
 				  str += getPieceAt(i, j);
 				}
 				else {
-				  str += gameBoard[i][j] + " ";
+				  str += gameBoard[i][j] + "";
 				}
 			}
 			str += "\n";
@@ -113,9 +119,11 @@ public class Board {
 		
 		public String toString(){
 			if (c.equals(Color.WHITE))
-				return "WHITE ";
+				//return "WHITE ";
+				return "       ";
 			else
-				return "BLACK ";
+				//return "BLACK ";
+			    return "       ";
 		}
 	}
 }
